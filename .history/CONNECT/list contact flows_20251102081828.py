@@ -1,9 +1,9 @@
-import json
 import boto3
+import json
 
-print("This will print the flow names and arn of the flows containing the text key\n")
-instance_id = input("Enter Instance ID: ")
-key = input("Enter text key in flow name: ")
+print(f"This will print the flow names and arn of the flows containing the text key\n")
+instance_id = input(f"Enter Instance ID: ")
+key = input(f"Enter text key in flow name: ")
 
 client = boto3.client('connect')
 

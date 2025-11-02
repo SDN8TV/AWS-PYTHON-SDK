@@ -4,14 +4,14 @@
 #
 # Creatinga  view with .env variable
 ######################################################################################
+import boto3
 import json
 import os
-import boto3
-from dotenv import load_dotenv
+from dotenv import find_dotenv, load_dotenv
 
 load_dotenv() # This loads the variables from the .env file
 
-instance_id =os.getenv("INSTANCE_ID")
+instance_id =os.getenv("INSTANCE_ID_DEV-DALE")
 
 client = boto3.client('connect')
 
@@ -25,7 +25,7 @@ response = client.create_view(
         ]
     },
     Description='string',
-    Name='Calendar_View',
+    Name='PSA_Calendar_View',
     Tags={
         'Dale': 'Test'
     }

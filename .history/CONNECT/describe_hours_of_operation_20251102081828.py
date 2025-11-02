@@ -4,16 +4,15 @@
 #
 # Describe Hours of Operation
 ######################################################################################
-
+import boto3
 import json
 import os
-import boto3
-from dotenv import load_dotenv
+from dotenv import find_dotenv, load_dotenv
 
 load_dotenv() # This loads the variables from the .env file
 
 instance_id =os.getenv("INSTANCE_ID_SANDBOX")
-hoo_id =os
+hoo_id ="0959d3bc-f5cc-45c2-9248-e7d2b032b8dd"
 
 print(instance_id)
 

@@ -2,13 +2,12 @@
 # Dale Murdock 
 # 
 ######################################################################################
-
+import boto3
 import json
 import os
-import boto3
-from dotenv import load_dotenv
+from dotenv import find_dotenv, load_dotenv
 
-load_dotenv()
+load_dotenv() # This loads the variables from the .env file
 
 api_id =os.getenv("API_ID")
 

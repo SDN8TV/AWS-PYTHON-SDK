@@ -8,11 +8,11 @@
 import boto3
 import json
 import os
-from dotenv import load_dotenv
+from dotenv import find_dotenv, load_dotenv
 
 load_dotenv() # This loads the variables from the .env file
 
-instance_id =os.getenv("INSTANCE_ID")
+print(instance_id)
 
 client = boto3.client('connect')
 
@@ -37,4 +37,3 @@ response_json = json.dumps(
  ) 
 
 print(response_json)
-# End of script

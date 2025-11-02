@@ -5,16 +5,16 @@
 # Describe View
 ######################################################################################
 
+import boto3
 import json
 import os
-import boto3
-from dotenv import load_dotenv
+from dotenv import find_dotenv, load_dotenv
 
 load_dotenv() # This loads the variables from the .env file
 
 instance_id =os.getenv("INSTANCE_ID_DEV")
 
-view_id =os.getenv("VIEW_ID_DEV")
+view_id = "80971164-5786-4b23-a0cd-d9569d3f8c8f"
 
 client = boto3.client('connect')
 
@@ -50,4 +50,3 @@ response_json = json.dumps(
  ) 
 
 print(response_json)
-# End of script

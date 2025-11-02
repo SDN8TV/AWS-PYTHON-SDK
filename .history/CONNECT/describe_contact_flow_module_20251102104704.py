@@ -11,9 +11,9 @@ list_cfm = ["list of contact flow module ids",
 client = boto3.client('connect')
 
 for i in list_cfm:
-    response = client.describe_contact_flow(
+    response = client.describe_contact_flow_module(
     InstanceId=os.getenv("INSTANCE_ID"),
-    ContactFlowId= i
+    ContactFlowModuleId= i
     )
 
     # convert dict to json
@@ -25,11 +25,5 @@ for i in list_cfm:
     ) 
     i += ".json"
 
-    with open(i, 'w', encoding="utf-8") as json_file:
+    with open(i, encoding="utf-8", 'w') as json_file:
         json_file.write(response_json)
-
-
-
-
-
-

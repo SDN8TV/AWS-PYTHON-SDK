@@ -1,15 +1,11 @@
-import json
-import os
 import boto3
-from dotenv import load_dotenv
-
-load_dotenv() # This loads the variables from the .env file
+import json
 
 client = boto3.client('connect')
 
 response = client.delete_routing_profile(
-    InstanceId=os.getenv("INSTANCE_ID"),
-    RoutingProfileId=os.getenv("ROUTING_PROFILE_ID")
+    InstanceId='59208d00-c70f-4b65-b835-4c8e0a41f565',
+    RoutingProfileId='4b9a52d1-e43b-4db4-93c5-f8f2445a783e'
 )
     
 # convert dict to json

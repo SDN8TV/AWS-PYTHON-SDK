@@ -1,5 +1,5 @@
 ######################################################################################
-# Dale Murdock
+# Dale Murdock 
 # 2025-03-11
 #
 # Updates the default outbound queue of a routing profile.
@@ -14,7 +14,7 @@ load_dotenv() # This loads the variables from the .env file
 client = boto3.client('connect')
 
 response = client.update_routing_profile_default_outbound_queue(
-    InstanceId= os.getenv("INSTANCE_ID"),
-    RoutingProfileId= os.getenv("ROUTING_PROFILE_ID"),
-    DefaultOutboundQueueId= os.getenv("QUEUE_ID")
+    InstanceId= os.getenv("INSTANCE_ID_OKTA"),
+    RoutingProfileId= os.getenv("ROUTING_PROFILE_ID_OKTA"),
+    DefaultOutboundQueueId= os.getenv("QUEUE_ID_OKTA")
 )

@@ -4,17 +4,16 @@
 #
 # This will describe the hour of operations overrides
 ######################################################################################
-
+import boto3
 import json
 import os
-import boto3
-from dotenv import load_dotenv
+from dotenv import find_dotenv, load_dotenv
 
 load_dotenv() # This loads the variables from the .env file
 
 instance_id =os.getenv("INSTANCE_ID_SANDBOX")
-hoo_id =os.getenv("HOO_ID_SANDBOX")
-hoo_o_id=os.getenv("HOO_OVERRIDE_ID_SANDBOX")   
+hoo_id ="0959d3bc-f5cc-45c2-9248-e7d2b032b8dd"
+hoo_o_id="e6751bb0-2304-4d17-bb99-596baea56050"
 
 client = boto3.client('connect')
 
@@ -33,4 +32,3 @@ response_json = json.dumps(
 )
 
 print(response_json)
-# End of script

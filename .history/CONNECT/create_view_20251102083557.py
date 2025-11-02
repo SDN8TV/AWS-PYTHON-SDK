@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 
 load_dotenv() # This loads the variables from the .env file
 
-instance_id =os.getenv("INSTANCE_ID")
+instance_id =os.getenv("INSTANCE_ID_DEV-DALE")
 
 client = boto3.client('connect')
 
