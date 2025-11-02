@@ -5,13 +5,10 @@
 # List all routing profiles and arn in the instance
 ###################################################################################### 
 
-import json
 import boto3
-import os
-from dotenv import load_dotenv 
-load_dotenv() # This loads the variables from the .env file
+import json
 
-instance_id= os.getenv("CONNECT_INSTANCE_ID"),
+instance_id= '59834988-0e27-43c0-8589-cd66ebf3808f' 
 
 connect = boto3.client('connect') #Connect
 response = connect.list_routing_profiles(

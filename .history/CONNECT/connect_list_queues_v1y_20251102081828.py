@@ -1,14 +1,11 @@
 import boto3
 import json
-import os
-from dotenv import find_dotenv, load_dotenv 
-load_dotenv() # This loads the variables from the .env file
 
 #list all groups using client
 
 
 next_token = ''
-InstanceId=os.getenv("CONNECT_INSTANCE_ID")
+instance_id = '59834988-0e27-43c0-8589-cd66ebf3808f'
 
 def connect(instance_id, next_token):
     connect = boto3.client('connect') #Connect
@@ -67,12 +64,12 @@ try:
         if i==4:
             break
 
-except Exception as e:
+except:
     print("An exception occurred")
     print(queue_names)
 
 
-# Options to consider implementing:
+
 
 # #response from aws is a dict
 # response_json = json.dumps(

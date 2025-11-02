@@ -4,10 +4,9 @@
 #
 # List all users in an AWS Connect instance, handling pagination to retrieve all users.
 ########################################################################################
-
+import boto3
 import json
 import os
-import boto3
 from dotenv import load_dotenv
 
 load_dotenv() # This loads the variables from the .env file
@@ -17,6 +16,14 @@ instance_id =os.getenv("INSTANCE_ID_OKTA")
 client = boto3.client('connect')
 
 import boto3
+
+"""
+Retrieves all users from an AWS Connect instance using pagination.
+
+:param instance_id: The identifier of the Connect instance.
+:param region_name: The AWS region where the instance is located.
+:return: A list of all user dictionaries.
+"""
 
 users = []
 next_token = None

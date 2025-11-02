@@ -1,15 +1,12 @@
-import json
-import os
 import boto3
-from dotenv import load_dotenv
-
-load_dotenv() # This loads the variables from the .env file
+import json
 
 client = boto3.client('connect')
 
+
 response = client.get_effective_hours_of_operations(
     InstanceId='',
-    HoursOfOperationId=os.getenv("HOO_ID_DEV"),
+    HoursOfOperationId='8661d0d1-1472-45e1-a962-4b62f67aed35',
     FromDate='string',
     ToDate='string'
 )
@@ -23,4 +20,3 @@ response_json = json.dumps(
  ) 
 
 print(response_json)
-#End of script

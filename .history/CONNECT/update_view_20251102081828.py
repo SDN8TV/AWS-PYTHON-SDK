@@ -66,4 +66,3 @@ response_json = json.dumps(
  ) 
 
 print(response_json)
-# End of script

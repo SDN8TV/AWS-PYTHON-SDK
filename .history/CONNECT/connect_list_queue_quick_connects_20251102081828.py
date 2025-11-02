@@ -1,7 +1,7 @@
 import boto3
 import json
 import os
-from dotenv import load_dotenv 
+from dotenv import find_dotenv, load_dotenv 
 load_dotenv() # This loads the variables from the .env file
 
 

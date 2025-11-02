@@ -5,14 +5,12 @@
 # List routing profiles and arn, filter by keyword in the name of the routing profile
 ######################################################################################
 
-import json
+
 import boto3
-import os
-from dotenv import find_dotenv, load_dotenv 
-load_dotenv() # This loads the variables from the .env file
+import json
 
 keyword = 'Chat'
-instance_id= os.getenv("CONNECT_INSTANCE_ID")
+instance_id= '59834988-0e27-43c0-8589-cd66ebf3808f'
 
 connect = boto3.client('connect') #Connect
 response = connect.list_routing_profiles(

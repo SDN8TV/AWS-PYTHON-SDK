@@ -1,22 +1,21 @@
 ######################################################################################
 # Dale Murdock 
+# 2025-10-06
+#
 # 
 ######################################################################################
-
+import boto3
 import json
 import os
-import boto3
-from dotenv import load_dotenv
+from dotenv import find_dotenv, load_dotenv
 
-load_dotenv()
+load_dotenv() # This loads the variables from the .env file
 
-api_id =os.getenv("API_ID")
+ap_id =os.getenv("API_ID")
 
 client = boto3.client('apigateway')
 
-response = client.get_rest_api(
-    restApiId=api_id
-)
+response = client.get_rest_apis(limit=100)
 
 # convert dict to json
 response_json = json.dumps(

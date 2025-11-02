@@ -2,18 +2,17 @@
 # Dale Murdock 
 # 2025-04-09
 #
-######################################################################################  
+###################################################################################### 
+# 
+# 
 
-import json
-import os
 import boto3
-from dotenv import load_dotenv 
-load_dotenv() # This loads the variables from the .env file
+import json
 
-instance_id = os.getenv("CONNECT_INSTANCE_ID")
-queue_name = os.getenv("QUEUE_NAME")
-tz = os.getenv("TZ")
-hoo_id = os.getenv("HOO_ID")
+instance_id = '59834988-0e27-43c0-8589-cd66ebf3808f'
+queue_name = 'ECC-SA_RCM_PatientAccess_Onshore'
+tz = 'US/Central'
+hoo_id = 'be2b6ab8-9d8a-46a6-aa9d-0c94890c0d47'
 
 client = boto3.client('connect')
 

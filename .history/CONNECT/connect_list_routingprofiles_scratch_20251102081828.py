@@ -5,14 +5,10 @@
 # Scratch to test code for given API
 ###################################################################################### 
 
-import json
-import os
 import boto3
-from dotenv import load_dotenv 
-load_dotenv() # This loads the variables from the .env file
+import json
 
-
-i_id= os.getenv("CONNECT_INSTANCE_ID")
+i_id= '59834988-0e27-43c0-8589-cd66ebf3808f' 
 
 connect = boto3.client('connect') #Connect
 #response from aws is a dict
